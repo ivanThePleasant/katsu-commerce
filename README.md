@@ -1,3 +1,3 @@
-# Strapi application
+# Strapi plugin katsu-commerce
 
-A quick description of your strapi application
+A quick description of katsu-commerce.
