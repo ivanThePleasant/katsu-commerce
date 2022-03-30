@@ -1,5 +1,5 @@
-const customer = require('./customer')
+"use strict";
 
-module.exports = [
-  ...customer,
-];
+const customer = require("./customer");
+
+module.exports = [...customer];

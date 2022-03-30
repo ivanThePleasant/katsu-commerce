@@ -9,10 +9,7 @@
 const _ = require("lodash");
 const utils = require("@strapi/utils");
 const { getService } = require("../utils");
-const {
-  validateCreateCustomerBody,
-  validateUpdateCustomerBody,
-} = require("./validation/customer");
+const { validateCreateCustomerBody, validateUpdateCustomerBody } = require("./validation/customer");
 const customer = require("../content-types/customer/customer");
 
 const { sanitize } = utils;
@@ -98,11 +95,7 @@ module.exports = {
 
     await validateUpdateCustomerBody(ctx.request.body);
 
-    if (
-      customer.provider === "local" &&
-      _.has(ctx.request.body, "password") &&
-      !password
-    ) {
+    if (customer.provider === "local" && _.has(ctx.request.body, "password") && !password) {
       throw new ValidationError("password.notNull");
     }
 
@@ -127,7 +120,7 @@ module.exports = {
       ctx.request.body.email = ctx.request.body.email.toLowerCase();
     }
 
-    let updateData = {
+    const updateData = {
       ...ctx.request.body,
     };
 
@@ -142,14 +135,9 @@ module.exports = {
    * @return {Object|Array}
    */
   async find(ctx, next, { populate } = {}) {
-    const customers = await getService("user").fetchAll(
-      ctx.query.filters,
-      populate
-    );
+    const customers = await getService("user").fetchAll(ctx.query.filters, populate);
 
-    ctx.body = await Promise.all(
-      customers.map((customer) => sanitizeOutput(customer, ctx))
-    );
+    ctx.body = await Promise.all(customers.map((customer) => sanitizeOutput(customer, ctx)));
   },
 
   /**
@@ -193,7 +181,7 @@ module.exports = {
    * @return {Object|Array}
    */
   async me(ctx) {
-    const customer = ctx.state.customer;
+    const { customer } = ctx.state;
 
     if (!customer) {
       return ctx.unauthorized();

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 import { Box } from "@strapi/design-system/Box";
 import { Stack } from "@strapi/design-system/Stack";
 import {
@@ -12,14 +12,13 @@ import {
 import { Grid, GridItem } from "@strapi/design-system/Grid";
 import { ToggleInput } from "@strapi/design-system/ToggleInput";
 
-const CreateNewCustomerForm = () => {
-  const [firstName, setFirstName] = useState('')
-  const [lastName, setLastName] = useState('')
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [confirmed, setConfirmed] = useState(false)
-  const [blocked, setBlocked] = useState(false)
-
+function CreateNewCustomerForm() {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmed, setConfirmed] = useState(false);
+  const [blocked, setBlocked] = useState(false);
 
   return (
     <form>
@@ -29,23 +28,13 @@ const CreateNewCustomerForm = () => {
             <GridItem col={6}>
               <Field name="first-name">
                 <FieldLabel required>First Name</FieldLabel>
-                <FieldInput
-                  type="text"
-                  placeholder="John"
-                  value={""}
-                  onChange={() => {}}
-                />
+                <FieldInput type="text" placeholder="John" value="" onChange={() => {}} />
               </Field>
             </GridItem>
             <GridItem col={6}>
               <Field name="last-name">
                 <FieldLabel required>Last Name</FieldLabel>
-                <FieldInput
-                  type="text"
-                  placeholder="Doe"
-                  value={""}
-                  onChange={() => {}}
-                />
+                <FieldInput type="text" placeholder="Doe" value="" onChange={() => {}} />
               </Field>
             </GridItem>
           </Grid>
@@ -56,7 +45,7 @@ const CreateNewCustomerForm = () => {
                 <FieldInput
                   type="text"
                   placeholder="john.doe@example.io"
-                  value={""}
+                  value=""
                   onChange={() => {}}
                 />
               </Field>
@@ -64,12 +53,7 @@ const CreateNewCustomerForm = () => {
             <GridItem col={6}>
               <Field name="password">
                 <FieldLabel required>Password</FieldLabel>
-                <FieldInput
-                  type="password"
-                  placeholder="Doe"
-                  value={""}
-                  onChange={() => {}}
-                />
+                <FieldInput type="password" placeholder="Doe" value="" onChange={() => {}} />
               </Field>
             </GridItem>
           </Grid>
@@ -77,17 +61,17 @@ const CreateNewCustomerForm = () => {
             <GridItem col={6}>
               <ToggleInput
                 label="Confirmed"
-                onLabel={"On"}
-                offLabel={"Off"}
+                onLabel="On"
+                offLabel="Off"
                 checked={confirmed}
                 onChange={() => setConfirmed(!confirmed)}
-                />
+              />
             </GridItem>
             <GridItem col={6}>
               <ToggleInput
                 label="Blocked"
-                onLabel={"On"}
-                offLabel={"Off"}
+                onLabel="On"
+                offLabel="Off"
                 checked={blocked}
                 onChange={() => setBlocked(!blocked)}
               />
@@ -170,4 +154,4 @@ const CreateNewCustomerForm = () => {
   );
 }
 
-export default CreateNewCustomerForm
+export default CreateNewCustomerForm;

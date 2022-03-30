@@ -1,5 +1,5 @@
-import React from 'react';
-import { Table, Thead, Tbody, Tr, Td, Th } from "@strapi/design-system/Table";
+import React from "react";
+import { Table, Thead, Tr, Th } from "@strapi/design-system/Table";
 import { EmptyStateLayout } from "@strapi/design-system/EmptyStateLayout";
 import { BaseCheckbox } from "@strapi/design-system/BaseCheckbox";
 import { IconButton } from "@strapi/design-system/IconButton";
@@ -8,7 +8,12 @@ import { Button } from "@strapi/design-system/Button";
 import CarretDown from "@strapi/icons/CarretDown";
 import Plus from "@strapi/icons/Plus";
 
-const CollectionTable = ({ tableData, emptyStateLayoutIcon, emptyStateLayoutText, onClickFunction }) => {
+function CollectionTable({
+  tableData,
+  emptyStateLayoutIcon,
+  emptyStateLayoutText,
+  onClickFunction,
+}) {
   return (
     <>
       <Table colCount={6} rowCount={6}>
@@ -17,11 +22,7 @@ const CollectionTable = ({ tableData, emptyStateLayoutIcon, emptyStateLayoutText
             <Th>
               <BaseCheckbox aria-label="Select all entries" />
             </Th>
-            <Th
-              action={
-                <IconButton label="Sort on ID" icon={<CarretDown />} noBorder />
-              }
-            >
+            <Th action={<IconButton label="Sort on ID" icon={<CarretDown />} noBorder />}>
               <Typography variant="sigma">ID</Typography>
             </Th>
             <Th>
@@ -41,7 +42,7 @@ const CollectionTable = ({ tableData, emptyStateLayoutIcon, emptyStateLayoutText
       </Table>
       <EmptyStateLayout
         content={emptyStateLayoutText}
-        icon={<img src={emptyStateLayoutIcon}></img>}
+        icon={<img src={emptyStateLayoutIcon} />}
         action={
           <Button onClick={() => onClickFunction()} variant="secondary" startIcon={<Plus />}>
             Create your first content-type
@@ -50,7 +51,6 @@ const CollectionTable = ({ tableData, emptyStateLayoutIcon, emptyStateLayoutText
       />
     </>
   );
-};
-
+}
 
 export default CollectionTable;
