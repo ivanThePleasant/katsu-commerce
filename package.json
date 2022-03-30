@@ -2,6 +2,10 @@
   "name": "katsu-commerce",
   "version": "0.0.0",
   "description": "This is the description of the plugin.",
+  "scripts": {
+    "lint": "eslint {server,admin}/**/*.js --fix",
+    "format": "prettier --write ."
+  },
   "strapi": {
     "name": "katsu-commerce",
     "description": "Description of katsu-commerce plugin",
@@ -17,7 +21,7 @@
     }
   ],
   "engines": {
-    "node": ">=12.x. <=16.x.x",
+    "node": ">=12.x.x <=16.x.x",
     "npm": ">=6.0.0"
   },
   "license": "MIT",
