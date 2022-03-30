@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
-const SideMetaDataMenu = () => {
-  return (
-    <div>SideMetaDataMenu</div>
-  )
+function SideMetaDataMenu() {
+  return <div>SideMetaDataMenu</div>;
 }
 
-export default SideMetaDataMenu
+export default SideMetaDataMenu;

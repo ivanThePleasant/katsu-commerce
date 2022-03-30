@@ -5,7 +5,7 @@
  */
 
 import React, { memo } from "react";
-import { useHistory } from 'react-router-dom';
+import { useHistory } from "react-router-dom";
 import { Box } from "@strapi/design-system/Box";
 
 import pluginId from "../../pluginId";
@@ -14,11 +14,10 @@ import Header from "../../components/Header/Header";
 import AddEntryButton from "../../components/AddEntryButton/AddEntryButton";
 import CollectionTable from "../../components/CollectionTable/CollectionTable";
 
-import CustomersIcon from '../../assets/customer.png'
+import CustomersIcon from "../../assets/customer.png";
 
-
-const CustomersPage = () => {
-  const history = useHistory()
+function CustomersPage() {
+  const history = useHistory();
 
   return (
     <>
@@ -40,6 +39,6 @@ const CustomersPage = () => {
       </Box>
     </>
   );
-};
+}
 
 export default memo(CustomersPage);

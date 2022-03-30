@@ -20,9 +20,7 @@ module.exports = ({ strapi }) => ({
    */
 
   count(params) {
-    return strapi
-      .query("plugin::katsu-commerce.customer")
-      .count({ where: params });
+    return strapi.query("plugin::katsu-commerce.customer").count({ where: params });
   },
 
   /**
@@ -56,14 +54,10 @@ module.exports = ({ strapi }) => ({
       params.password = await getService("customer").hashPassword(params);
     }
 
-    return strapi.entityService.update(
-      "plugin::katsu-commerce.customer",
-      customerId,
-      {
-        data: params,
-        populate: ["role"],
-      }
-    );
+    return strapi.entityService.update("plugin::katsu-commerce.customer", customerId, {
+      data: params,
+      populate: ["role"],
+    });
   },
 
   /**
@@ -71,9 +65,7 @@ module.exports = ({ strapi }) => ({
    * @return {Promise}
    */
   fetch(params, populate) {
-    return strapi
-      .query("plugin::katsu-commerce.customer")
-      .findOne({ where: params, populate });
+    return strapi.query("plugin::katsu-commerce.customer").findOne({ where: params, populate });
   },
 
   /**
@@ -91,9 +83,7 @@ module.exports = ({ strapi }) => ({
    * @return {Promise}
    */
   fetchAll(params, populate) {
-    return strapi
-      .query("plugin::katsu-commerce.customer")
-      .findMany({ where: params, populate });
+    return strapi.query("plugin::katsu-commerce.customer").findMany({ where: params, populate });
   },
 
   hashPassword(customer = {}) {
@@ -124,9 +114,7 @@ module.exports = ({ strapi }) => ({
    * @return {Promise}
    */
   async remove(params) {
-    return strapi
-      .query("plugin::katsu-commerce.customer")
-      .delete({ where: params });
+    return strapi.query("plugin::katsu-commerce.customer").delete({ where: params });
   },
 
   validatePassword(password, hash) {
@@ -143,13 +131,10 @@ module.exports = ({ strapi }) => ({
 
     const settings = await pluginStore
       .get({ key: "email" })
-      .then((storeEmail) => storeEmail["email_confirmation"].options);
+      .then((storeEmail) => storeEmail.email_confirmation.options);
 
     // Sanitize the template's customer information
-    const sanitizedCustomerInfo = await sanitize.sanitizers.defaultSanitizeOutput(
-      userSchema,
-      user
-    );
+    const sanitizedCustomerInfo = await sanitize.sanitizers.defaultSanitizeOutput(userSchema, user);
 
     const confirmationToken = crypto.randomBytes(20).toString("hex");
 

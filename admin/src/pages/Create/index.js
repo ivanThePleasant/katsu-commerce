@@ -1,3 +1,3 @@
-import CreateNewCustomer from './CreateNewCustomer'
+import CreateNewCustomer from "./CreateNewCustomer";
 
-export const CreateNewCustomer
+export default CreateNewCustomer;

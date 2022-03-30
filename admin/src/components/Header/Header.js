@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 
 import { BaseHeaderLayout } from "@strapi/design-system/Layout";
 
-const Header = ({ title, subtitle, button, navigationAction }) => {
+function Header({ title, subtitle, button, navigationAction }) {
   return (
     <BaseHeaderLayout
       primaryAction={button}
@@ -12,6 +12,6 @@ const Header = ({ title, subtitle, button, navigationAction }) => {
       navigationAction={navigationAction}
     />
   );
-};
+}
 
 export default Header;

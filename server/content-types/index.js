@@ -1,5 +1,7 @@
-const customer = require('./customer/customer')
+"use strict";
+
+const customer = require("./customer/customer");
 
 module.exports = {
-  customer: { schema: customer }
-}
+  customer: { schema: customer },
+};

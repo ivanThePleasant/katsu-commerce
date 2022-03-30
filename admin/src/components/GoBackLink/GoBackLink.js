@@ -1,8 +1,8 @@
-import React from 'react'
+import React from "react";
 import { Link } from "@strapi/design-system/Link";
 import ArrowLeft from "@strapi/icons/ArrowLeft";
 
-const GoBackLink = ({ link }) => {
+function GoBackLink({ link }) {
   return (
     <Link startIcon={<ArrowLeft />} to={link}>
       Go back
@@ -10,4 +10,4 @@ const GoBackLink = ({ link }) => {
   );
 }
 
-export default GoBackLink
+export default GoBackLink;

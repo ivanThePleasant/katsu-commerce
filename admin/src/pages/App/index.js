@@ -5,18 +5,18 @@
  *
  */
 
-import React from 'react';
-import { Switch, Route } from 'react-router-dom';
-import { NotFound } from '@strapi/helper-plugin';
+import React from "react";
+import { Switch, Route } from "react-router-dom";
+import { NotFound } from "@strapi/helper-plugin";
 import { Layout } from "@strapi/design-system/Layout";
-import pluginId from '../../pluginId';
+import pluginId from "../../pluginId";
 
-import MainMenu from '../../components/MainMenu/MainMenu';
-import HomePage from '../HomePage';
-import CustomersPage from '../CustomersPage';
-import CreateNewCustomer  from '../Create/CreateNewCustomer';
+import MainMenu from "../../components/MainMenu/MainMenu";
+import HomePage from "../HomePage";
+import CustomersPage from "../CustomersPage";
+import CreateNewCustomer from "../Create/CreateNewCustomer";
 
-const App = () => {
+function App() {
   return (
     <div>
       <Layout sideNav={<MainMenu />}>
@@ -37,6 +37,6 @@ const App = () => {
       </Layout>
     </div>
   );
-};
+}
 
 export default App;

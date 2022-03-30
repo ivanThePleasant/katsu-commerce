@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 import {
   SubNav,
@@ -15,20 +15,16 @@ import Clock from "@strapi/icons/Clock";
 import Drag from "@strapi/icons/Drag";
 import File from "@strapi/icons/File";
 import Earth from "@strapi/icons/Earth";
-import BulletList from '@strapi/icons/BulletList';
+import BulletList from "@strapi/icons/BulletList";
 
 import pluginId from "../../pluginId";
 
-const MainMenu = () => {
+function MainMenu() {
   return (
     <SubNav ariaLabel="Plugin main menu">
       <SubNavHeader label="Katsu Commerce" />
       <SubNavSections>
-        <SubNavLink
-          to={`/plugins/${pluginId}`}
-          withBullet={false}
-          icon={<Apps />}
-        >
+        <SubNavLink to={`/plugins/${pluginId}`} withBullet={false} icon={<Apps />}>
           Dashboard
         </SubNavLink>
         <SubNavSection label="Store management">
@@ -63,6 +59,6 @@ const MainMenu = () => {
       </SubNavSections>
     </SubNav>
   );
-};
+}
 
 export default MainMenu;
